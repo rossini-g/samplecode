@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="grp" parallel="tests" thread-count="1">
+  <test name="grp-1">
+    <groups>
+      <define name="include-group">
+        <include name="T1" />
+      </define>
+      <define name="exclude-group">
+        <include name="T2" />
+      </define>
+      <run>
+        <include name="include-group" />
+        <exclude name="exclude-group" />
+      </run>
+    </groups>
+    <classes>
+      <class name="testScripts.TCID_1"/>
+    </classes>
+  </test>
+</suite>
